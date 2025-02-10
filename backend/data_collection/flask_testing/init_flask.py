@@ -32,5 +32,10 @@ def get_users():
     return query_db(query)
 
 
+# Get item prices
+@app.route('/prices/<int:item_id>', methods=['GET'])
+def get_item_prices(item_id):
+    return query_db("SELECT * FROM item_prices WHERE item_id = ? ORDER BY date", (item_id,))
+
 if __name__ == '__main__':
     app.run(debug=True)
