@@ -1,4 +1,4 @@
-The purpose of this folder is for testing flask server configuration.
+The purpose of this folder is for testing flask server configuration. (must install using pip install flask)
 
 Try running [init_db.py](init_db.py) first to create the test sqlite database.
 
