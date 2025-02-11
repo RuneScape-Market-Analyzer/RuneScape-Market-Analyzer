@@ -1,3 +1,5 @@
-# IDE Files to ignore
+# IDE files to ignore
 .idea
+__pycache__
 
+# Other files to ignore
