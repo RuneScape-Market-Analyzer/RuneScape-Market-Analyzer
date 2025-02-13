@@ -1,11 +1,12 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import sqlite3
 
 from backend.utils.scripts.update_item_prices import update_new_item
 
-
 def create_app(DB_FILE_PATH):
     app = Flask(__name__)
+    CORS(app)
 
     # Helper function to query sqlite database and return result
     def query_db(query, args=(), one=False):
@@ -44,5 +45,20 @@ def create_app(DB_FILE_PATH):
             result = query_db(query, (item_id,))
 
         return result
+    
+    # Retrieves a list of item IDs from database
+    # Returns JSON list of IDs for use in frontend
+    @app.route('/items', methods=['GET'])
+    def get_available_items():
+        query = "SELECT DISTINCT item_id FROM item_prices ORDER BY item_id"
+        connection = sqlite3.connect(DB_FILE_PATH)
+        cursor = connection.cursor()
+        try:
+            cursor.execute(query)
+            item_ids = [row[0] for row in cursor.fetchall()]
+            return jsonify(item_ids)
+        finally:
+            cursor.close()
+            connection.close()
 
     return app
