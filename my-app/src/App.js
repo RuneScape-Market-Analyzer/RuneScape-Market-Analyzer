@@ -74,7 +74,7 @@ function App() {
   useEffect(() => {
     const fetchItemIDs = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/items');
+        const response = await fetch('http://127.0.0.1:5000/items/ids');
         const data = await response.json();
         console.log("Fetched Item IDs:", data);
 
@@ -94,7 +94,7 @@ function App() {
   // Get price data for selected item
   const fetchPriceData = async (itemID) => {
     try {
-      const response = await fetch(`http://127.0.0.1:5000/prices/${itemID}`);
+      const response = await fetch(`http://127.0.0.1:5000/items/prices/${itemID}`);
       const data = await response.json();
       console.log("Fetched Price Data:", data);
 

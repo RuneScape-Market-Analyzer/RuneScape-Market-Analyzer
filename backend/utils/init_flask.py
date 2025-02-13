@@ -4,6 +4,7 @@ import sqlite3
 
 from backend.utils.scripts.update_item_prices import update_new_item
 
+
 def create_app(DB_FILE_PATH):
     app = Flask(__name__)
     CORS(app)
@@ -34,7 +35,7 @@ def create_app(DB_FILE_PATH):
         return query_db(query)
 
     # Get item prices
-    @app.route('/prices/<int:item_id>', methods=['GET'])
+    @app.route('/items/prices/<int:item_id>', methods=['GET'])
     def get_item_prices(item_id):
         query = "SELECT * FROM item_prices WHERE item_id = ? ORDER BY date"
         result = query_db(query, (item_id,))
@@ -48,17 +49,9 @@ def create_app(DB_FILE_PATH):
     
     # Retrieves a list of item IDs from database
     # Returns JSON list of IDs for use in frontend
-    @app.route('/items', methods=['GET'])
+    @app.route('/items/ids', methods=['GET'])
     def get_available_items():
         query = "SELECT DISTINCT item_id FROM item_prices ORDER BY item_id"
-        connection = sqlite3.connect(DB_FILE_PATH)
-        cursor = connection.cursor()
-        try:
-            cursor.execute(query)
-            item_ids = [row[0] for row in cursor.fetchall()]
-            return jsonify(item_ids)
-        finally:
-            cursor.close()
-            connection.close()
+        return query_db(query)
 
     return app
