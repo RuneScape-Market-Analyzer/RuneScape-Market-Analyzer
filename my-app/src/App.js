@@ -180,7 +180,7 @@ function App() {
       </div>
 
       {/* Bar Chart */}
-      <div style={{ marginBottom: '30px', width: '100%', height: '500px' }}>
+      <div style={{ width: '100%', height: '500px' }}>
         <Bar 
           data={{
             ...chartData,
