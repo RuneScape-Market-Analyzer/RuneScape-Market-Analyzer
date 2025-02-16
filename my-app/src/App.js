@@ -39,7 +39,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarEleme
 
 const formatTimestamp = (timestamp) => {
   try {
-    return format(new Date(timestamp), 'MMM d, yyyy HH:mm');
+    return format(new Date(timestamp), 'MMM d, yyyy');
   } catch {
     return timestamp;
   }
