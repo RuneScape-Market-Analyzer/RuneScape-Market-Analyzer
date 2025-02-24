@@ -106,6 +106,25 @@ def create_item_prices_table(cursor):
     ''')
 
 
+# Creates items table which stores item data pulled from https://chisel.weirdgloop.org/gazproj/gazbot/rs_dump.json
+def create_items_table(cursor):
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS items (
+            item_id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL,
+            description TEXT,
+            members BOOLEAN,
+            high_alchemy INTEGER,
+            low_alchemy INTEGER,
+            trade_limit INTEGER,
+            value INTEGER,
+            price INTEGER,
+            last INTEGER,
+            volume INTEGER
+        );
+    ''')
+
+
 def init_db_schema(DB_FILE_PATH):
     connection = sqlite3.connect(DB_FILE_PATH)
     cursor = connection.cursor()
@@ -114,5 +133,6 @@ def init_db_schema(DB_FILE_PATH):
     create_item_category_letters_table(cursor)
     create_item_details_table(cursor)
     create_item_prices_table(cursor)
+    create_items_table(cursor)
 
     connection.commit()
