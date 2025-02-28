@@ -6,9 +6,28 @@ Below are the details of each available endpoint:
 ## Endpoints
 
 ### Get Item Prices
+
 - **Endpoint**: `/items/prices/<int:item_id>`
 - **Method**: `GET`
-- **Description**: Returns all available item price data for a given `item_id`.
+- **Description**: Returns item price data for a given `item_id`, filtered by the specified time range.
+
+#### Query Parameters:
+
+- `time` (optional): Specifies the time range for filtering the item prices. Possible values are:
+  - `1W`: Last 1 week 
+  - `1M`: Last 1 month
+  - `3M`: Last 3 months
+  - `6M`: Last 6 months
+  - `1Y`: Last 1 year (default)
+  - `5Y`: Last 5 years
+  - `ALL`: All available data
+
+#### Example Requests:
+
+1. Get prices for `item_id` of `2357` (gold bar) with the default time filter (last 1 week):
+`http://localhost:5000/items/prices/2357`
+2. Get prices for `item_id` of `2357` (gold bar) with the 3-month filter:
+`http://localhost:5000/items/prices/2357?time=3M`
 
 ### Get All Item IDs
 - **Endpoint**: `/items/ids`
