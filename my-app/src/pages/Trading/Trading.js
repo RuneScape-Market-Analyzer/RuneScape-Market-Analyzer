@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Bar, Line } from "react-chartjs-2";
 import { format } from "date-fns";
-import ProfitCalculator from "../components/ProfitCalculator.js";
+import ProfitCalculator from "../../components/ProfitCalculator/ProfitCalculator.js";
 import {
     Chart as ChartJS,
     CategoryScale,
