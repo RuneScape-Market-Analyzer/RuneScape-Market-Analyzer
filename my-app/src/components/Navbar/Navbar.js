@@ -10,12 +10,13 @@ const Navbar = () => (
                 margin: 0,
                 padding: 0,
                 justifyContent: "center",
-                gap: "20px",
+                gap: "40px",
             }}
         >
             {[
                 { name: "Home", path: "/" },
                 { name: "Trading", path: "/trading" },
+                { name: "Search", path: "/search" },
                 { name: "News", path: "/news" },
                 { name: "FAQ", path: "/faq" },
                 { name: "Login", path: "/login" },
