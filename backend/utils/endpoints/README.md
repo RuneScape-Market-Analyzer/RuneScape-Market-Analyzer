@@ -53,3 +53,36 @@ Below are the details of each available endpoint:
 - **Endpoint**: `/items/total_count`
 - **Method**: `GET`
 - **Description**: Returns the total number of items currently tracked in the database.
+
+### Calculate Profit
+- **Endpoint**: `/items/profit`
+- **Method**: `POST`
+- **Description**: Calculates the profit for an item based on its **purchase date** and/or **purchase price**.  
+If the `purchase_price` is not provided, the API will find the closest historical price for the given date.  
+Returns the **current price**, **profit if sold now**, and a placeholder for future predicted profit.
+#### Example Requests
+**1. Calculate profit using a manually entered purchase price:**
+```json
+{
+    "item_id": 2,
+    "purchase_date": "2024-04-01",
+    "purchase_price": 75000
+}
+```
+**Calculate profit using historical price (no manual price input):**
+```json
+{
+    "item_id": 2,
+    "purchase_date": "2024-04-01"
+}
+```
+#### Example Responses
+**Successful Response**
+```json
+{
+    "current_price": 78000,
+    "profit_now": 3000,
+    "predicted_future_price": null,
+    "profit_future": null
+}
+```
