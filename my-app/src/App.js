@@ -10,17 +10,25 @@ import Login from "./pages/Login/Login.js";
 
 function App() {
     return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/trading" element={<Trading />} />
-                <Route path="/search" element={<Search />} />
-                <Route path="/news" element={<News />} />
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/login" element={<Login />} />
-            </Routes>
+        <div
+            style={{
+                background: 'linear-gradient(to bottom, #442788, #66264E, #461955)',
+                 minHeight: '100vh',
+                 color: 'white',
+            }}
+        > 
+            <Router>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/trading" element={<Trading />} />
+                    <Route path="/search" element={<Search />} />
+                    <Route path="/news" element={<News />} />
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/login" element={<Login />} />
+                </Routes>
         </Router>
+        </div>
     );
 }
 
