@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PriceChart from "./PriceChart";
+import { calculatePriceDifference } from "./priceDifference";
 
 const Search = () => {
   const [query, setQuery] = useState("");
@@ -11,6 +12,7 @@ const Search = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isSelecting, setIsSelecting] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+  const priceChange = calculatePriceDifference(priceData);
 
   useEffect(() => {
     if (!query.trim() || isSelecting) {
@@ -72,7 +74,7 @@ const Search = () => {
     }
   };
 
-  const handleSelectSuggestion = (item) => {
+  const handleSelectSuggestion = async (item) => {
     setIsSelecting(true);
     setQuery(item.name);
     setSelectedItem(item);
@@ -80,7 +82,28 @@ const Search = () => {
     setHoveredIndex(null);
     setIsFocused(false);
     fetchPriceHistory(item.item_id);
+  
+    try {
+      const [bigImageRes, smallImageRes] = await Promise.all([
+        fetch(`http://127.0.0.1:5000/items/image_big/${item.item_id}`),
+        fetch(`http://127.0.0.1:5000/items/image_small/${item.item_id}`)
+      ]);
+  
+      const [bigImageData, smallImageData] = await Promise.all([
+        bigImageRes.json(),
+        smallImageRes.json()
+      ]);
+  
+      setSelectedItem((prev) => ({
+        ...prev,
+        bigImageUrl: bigImageData[0],
+        smallImageUrl: smallImageData[0],
+      }));
+    } catch (error) {
+      console.error("Error fetching item images:", error);
+    }
   };
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -116,7 +139,7 @@ const Search = () => {
           padding: "14px",
           borderRadius: "5px",
           background: "#1A1A2E",
-          border: "1px solid #f72585",
+          border: "2px solid #f72585",
           color: "#FFFFFF",
           outline: "none",
           boxShadow: "0px 0px 10px #f72585",
@@ -168,18 +191,62 @@ const Search = () => {
             animation: "fadeIn 0.5s ease-in-out",
             width: "100%",
             maxWidth: "640px",
+            textAlign: "center",
           }}
         >
-          <h3 style={{ color: "#FFFFFF", fontSize: "23px" }}>{selectedItem.name}</h3>
-          <p style={{ fontSize: "17px" }}><strong style={{ color: "#FFA07A" }}>ID:</strong> {selectedItem.item_id}</p>
-          <p style={{ fontSize: "17px" }}><strong style={{ color: "#FFA07A" }}>Description:</strong> {selectedItem.description}</p>
+          {/* Image & Name */}
+          <div style={{ position: "relative", display: "inline-block" }}>
+            {selectedItem.bigImageUrl && (
+              <img
+                src={selectedItem.bigImageUrl}
+                alt={`${selectedItem.name} Image`}
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  objectFit: "contain",
+                  position: "absolute",
+                  left: "-60px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                }}
+                onError={(e) => {
+                  e.target.src = "/fallback-image.png";
+                }}
+              />
+            )}
+
+            <h3
+              style={{
+                color: "#FFFFFF",
+                fontSize: "23px",
+                margin: "0 auto",
+                display: "inline-block",
+                position: "relative",
+              }}
+            >
+              {selectedItem.name}
+            </h3>
+          </div>
+
+          {/* Item Details */}
+          <p style={{ fontSize: "17px" }}>
+            <strong style={{ color: "#FFA07A" }}>ID:</strong> {selectedItem.item_id}
+          </p>
+          <p style={{ fontSize: "17px" }}>
+            <strong style={{ color: "#FFA07A" }}>Description:</strong> {selectedItem.description}
+          </p>
           <p style={{ fontSize: "19px" }}>
             <strong style={{ color: "gold" }}>💰 Current Price:</strong> {priceData?.slice(-1)[0]?.price || "N/A"} GP
           </p>
-  
+
+          <p style={{ fontSize: "17px", color: priceChange.color }}>
+            {priceChange.difference >= 0 ? "+" : ""}{priceChange.difference.toFixed(1)} GP
+          </p>
+
           <PriceChart priceData={priceData} />
         </div>
       )}
+
   
       {loading && <p style={{ color: "#FFA07A", fontSize: "17px" }}>Loading...</p>}
       {error && <p style={{ color: "red", fontSize: "17px" }}>{error}</p>}
