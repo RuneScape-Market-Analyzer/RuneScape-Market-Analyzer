@@ -199,7 +199,7 @@ const Search = () => {
             {selectedItem.bigImageUrl && (
               <img
                 src={selectedItem.bigImageUrl}
-                alt={`${selectedItem.name} Image`}
+                alt={`${selectedItem.name} `}
                 style={{
                   width: "50px",
                   height: "50px",
