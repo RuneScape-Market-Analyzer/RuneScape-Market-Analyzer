@@ -3,3 +3,4 @@
 __pycache__
 
 # Other files to ignore
+backend/data/prod.db

@@ -1,18 +1,125 @@
 # API - Items Endpoint
-
 This section of the API provides various endpoints to interact with data related to item prices and details. 
-Below are the details of each available endpoint:
 
-## Endpoints
+<br>
+
+## Table of Contents
+1. [API - Items Endpoint](#api---items-endpoint)
+   - [Item Details Endpoints](#item-details-endpoints)
+     - [Get All Item IDs](#get-all-item-ids)
+     - [Get Item Name](#get-item-name)
+     - [Get Item Description](#get-item-description)
+     - [Get Item Image Big](#get-item-image-big)
+     - [Get Item Image Small](#get-item-image-small)
+   - [Item Prices Endpoints](#item-prices-endpoints)
+     - [Get Item Prices](#get-item-prices)
+   - [Item Search Endpoints](#item-search-endpoints)
+     - [Search for Item](#search-for-item)
+   - [Item Statistics Endpoints](#item-statistics-endpoints)
+     - [Get Number of Items Tracked](#get-number-of-items-tracked)
+     - [Calculate Profit](#calculate-profit)
+
+<br>
+
+## Item Details Endpoints
+
+### Get All Item IDs
+- **Endpoint**: `/items/ids`
+- **Method**: `GET`
+- **Description**: Retrieves a list of all items from the database and returns a JSON list of `item_id` for use in the frontend.
+
+#### Example Responses
+```json
+[
+  [
+    2
+  ],
+  [
+    36
+  ],
+  [
+    "...truncated in this example..."
+  ]
+]
+```
+
+### Get Item Name
+- **Endpoint**: `/items/name/<int:item_id>`
+- **Method**: `GET`
+- **Description**: Returns the item name for a given `item_id`.
+
+#### Example Responses
+```json
+[
+  [
+    "Cannonball"
+  ]
+]
+```
+
+### Get Item Description
+- **Endpoint**: `/items/description/<int:item_id>`
+- **Method**: `GET`
+- **Description**: Returns the item description for a given `item_id`.
+
+#### Example Responses
+```json
+[
+  [
+    "Ammo for the Dwarf Cannon."
+  ]
+]
+```
+
+### Get Item Description
+- **Endpoint**: `/items/description/<int:item_id>`
+- **Method**: `GET`
+- **Description**: Returns the item description for a given `item_id`.
+
+#### Example Responses
+```json
+[
+  [
+    "Ammo for the Dwarf Cannon."
+  ]
+]
+```
+
+### Get Item Image Big
+- **Endpoint**: `/items/image_big/<int:item_id>`
+- **Method**: `GET`
+- **Description**: Returns and validates url for big item image
+
+#### Example Responses
+```json
+[
+  "https://services.runescape.com/m=itemdb_rs/obj_big.gif?id=2"
+]
+```
+
+### Get Item Image Small
+- **Endpoint**: `/items/image_small/<int:item_id>`
+- **Method**: `GET`
+- **Description**: Returns and validates url for small item image
+
+#### Example Responses
+```json
+[
+  "https://services.runescape.com/m=itemdb_rs/obj_sprite.gif?id=2"
+]
+```
+
+
+<br>
+
+## Item Prices Endpoints
 
 ### Get Item Prices
-
 - **Endpoint**: `/items/prices/<int:item_id>`
 - **Method**: `GET`
 - **Description**: Returns item price data for a given `item_id`, filtered by the specified time range.
 
-#### Query Parameters:
-
+#### Query Parameters
 - `time` (optional): Specifies the time range for filtering the item prices. Possible values are:
   - `1W`: Last 1 week 
   - `1M`: Last 1 month
@@ -22,37 +129,77 @@ Below are the details of each available endpoint:
   - `5Y`: Last 5 years
   - `ALL`: All available data
 
-#### Example Requests:
-
+#### Example Requests
 1. Get prices for `item_id` of `2357` (gold bar) with the default time filter (last 1 week):
 `http://localhost:5000/items/prices/2357`
+
 2. Get prices for `item_id` of `2357` (gold bar) with the 3-month filter:
 `http://localhost:5000/items/prices/2357?time=3M`
 
-### Get All Item IDs
-- **Endpoint**: `/items/ids`
-- **Method**: `GET`
-- **Description**: Retrieves a list of all items from the database and returns a JSON list of `item_id` for use in the frontend.
+#### Example Responses
+```json
+[
+  [
+    2357,
+    "2024-03-15",
+    2088.0
+  ],
+  [
+    2357,
+    "2024-03-15",
+    2088.0
+  ],
+  [
+    "...truncated in this example..."
+  ]
+]
+```
 
-### Get Item Name
-- **Endpoint**: `/items/name/<int:item_id>`
-- **Method**: `GET`
-- **Description**: Returns the item name for a given `item_id`.
+<br>
 
-### Get Item Description
-- **Endpoint**: `/items/description/<int:item_id>`
-- **Method**: `GET`
-- **Description**: Returns the item description for a given `item_id`.
+## Item Search Endpoints
 
 ### Search for Item
 - **Endpoint**: `/items/search/<string:keyword>`
 - **Method**: `GET`
 - **Description**: Performs a search based on keyword(s) and returns a list of relevant items with their `item_id`, `name`, and `description`.
 
+#### Example Responses
+```json
+[
+  [
+    444,
+    "Gold ore",
+    "This needs refining."
+  ],
+  [
+    1635,
+    "Gold ring",
+    "A valuable ring."
+  ],
+  [
+    "...truncated in this example..."
+  ]
+]
+```
+
+<br>
+
+## Item Statistics Endpoints
+
 ### Get Number of Items Tracked
 - **Endpoint**: `/items/total_count`
 - **Method**: `GET`
 - **Description**: Returns the total number of items currently tracked in the database.
+
+#### Example Responses
+```json
+[
+  [
+    6841
+  ]
+]
+```
 
 ### Calculate Profit
 - **Endpoint**: `/items/profit`

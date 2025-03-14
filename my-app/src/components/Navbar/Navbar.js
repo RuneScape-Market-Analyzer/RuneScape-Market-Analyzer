@@ -1,18 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Navbar.css'; // Import the CSS file
+import logo from '../../assets/images/RuneScape.png';
+
 
 const Navbar = () => (
-    <nav style={{ backgroundColor: "#333", padding: "10px" }}>
-        <ul
-            style={{
-                display: "flex",
-                listStyleType: "none",
-                margin: 0,
-                padding: 0,
-                justifyContent: "center",
-                gap: "40px",
-            }}
-        >
+    <nav className="navbar">
+        <div className="logo">
+            <img src={logo} alt="Logo" /> 
+        </div>
+
+        <ul className="nav-links">
             {[
                 { name: "Home", path: "/" },
                 { name: "Trading", path: "/trading" },
@@ -21,8 +19,8 @@ const Navbar = () => (
                 { name: "FAQ", path: "/faq" },
                 { name: "Login", path: "/login" },
             ].map((item) => (
-                <li key={item.name} style={{ color: "#fff", cursor: "pointer" }}>
-                    <Link to={item.path} style={{ color: "inherit", textDecoration: "none" }}>
+                <li key={item.name}>
+                    <Link to={item.path} className="nav-link">
                         {item.name}
                     </Link>
                 </li>

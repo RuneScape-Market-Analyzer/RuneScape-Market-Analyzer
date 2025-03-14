@@ -2,14 +2,21 @@ from flask import Flask, g
 from flask_cors import CORS
 
 from backend.utils.scripts.fetch_bulk_data import *
-from backend.utils.endpoints.items_endpoint import item_bp
+from backend.utils.endpoints.item_prices import item_prices_bp
+from backend.utils.endpoints.item_details import item_details_bp
+from backend.utils.endpoints.item_search import item_search_bp
+from backend.utils.endpoints.item_statistics import item_statistics_bp
 
 
 def init_flask(DB_FILE_PATH):
     app = Flask(__name__)
     CORS(app)
 
-    app.register_blueprint(item_bp)
+    # Register blueprints
+    app.register_blueprint(item_prices_bp)
+    app.register_blueprint(item_details_bp)
+    app.register_blueprint(item_search_bp)
+    app.register_blueprint(item_statistics_bp)
 
     @app.before_request
     def before_request():
