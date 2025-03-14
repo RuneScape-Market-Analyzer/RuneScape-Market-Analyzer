@@ -199,7 +199,11 @@ const Search = () => {
             {selectedItem.bigImageUrl && (
               <img
                 src={selectedItem.bigImageUrl}
-                alt={`${selectedItem.name} `}
+                alt={selectedItem.name}
+                className="fade-in-image"
+                onError={(e) => {
+                  e.target.src = "/fallback-image.png";
+                }}
                 style={{
                   width: "50px",
                   height: "50px",
@@ -208,9 +212,8 @@ const Search = () => {
                   left: "-60px",
                   top: "50%",
                   transform: "translateY(-50%)",
-                }}
-                onError={(e) => {
-                  e.target.src = "/fallback-image.png";
+                  opacity: 0,
+                  animation: "fadeInPop 0.6s ease-in-out forwards",
                 }}
               />
             )}
@@ -257,6 +260,17 @@ const Search = () => {
           @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(-10px); }
             100% { opacity: 1; transform: translateY(0); }
+          }
+
+          @keyframes fadeInPop {
+            0% {
+              opacity: 0;
+              transform: scale(1) translateY(-50%);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1) translateY(-50%);
+            }
           }
         `}
       </style>
