@@ -7,6 +7,8 @@ import News from "./pages/News/News.js";
 import Search from "./pages/Search/Search.js";
 import FAQ from "./pages/FAQ/FAQ.js";
 import Login from "./pages/Login/Login.js";
+import Test from "./pages/Test/Test.js";
+
 
 function App() {
     return (
@@ -26,6 +28,7 @@ function App() {
                     <Route path="/news" element={<News />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/test" element={<Test />} />
                 </Routes>
         </Router>
         </div>
