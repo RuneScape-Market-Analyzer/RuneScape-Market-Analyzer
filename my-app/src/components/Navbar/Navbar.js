@@ -18,6 +18,7 @@ const Navbar = () => (
                 { name: "News", path: "/news" },
                 { name: "FAQ", path: "/faq" },
                 { name: "Login", path: "/login" },
+                { name: "Test", path: "/test" },
             ].map((item) => (
                 <li key={item.name}>
                     <Link to={item.path} className="nav-link">

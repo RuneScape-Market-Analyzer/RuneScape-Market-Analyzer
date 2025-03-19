@@ -12,6 +12,9 @@ function Home() {
     const handleNews = () => {
         navigate('/news')
     }
+    const handleFAQ = () => {
+        navigate('/faq')
+    }
 
     return (
         <div style={{ textAlign: "center", marginTop: "50px" }}>
@@ -51,7 +54,7 @@ function Home() {
             <p>
             Check out our FAQ section!
             </p>
-            <button className="navigate-button" onClick={handleNews}>
+            <button className="navigate-button" onClick={handleFAQ}>
                     View All
                 </button>
             </div>
