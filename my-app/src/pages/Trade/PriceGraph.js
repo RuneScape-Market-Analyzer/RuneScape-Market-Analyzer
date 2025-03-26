@@ -12,6 +12,7 @@ import {
   getChartOptions,
 } from "./PriceGraphUtils";
 import SearchItem from "./SearchItem";
+import ProfitCalculator from "../../components/ProfitCalculator/ProfitCalculator";
 
 Chart.register({
   id: "crosshairLine",
@@ -43,6 +44,7 @@ const PriceGraph = () => {
   const [graphColor, setGraphColor] = useState("#00e676");
   const [isLoading, setIsLoading] = useState(false);
   const [hoveredPrice, setHoveredPrice] = useState(null);
+  const [graphReady, setGraphReady] = useState(false);
 
   const priceGraphRef = useRef(null);
 
@@ -52,6 +54,8 @@ const PriceGraph = () => {
 
   useEffect(() => {
     if (!itemID) return;
+
+    setGraphReady(false);
 
     const fetchData = async () => {
       setIsLoading(true);
@@ -66,6 +70,7 @@ const PriceGraph = () => {
         setGraphColor
       );
       setIsLoading(false);
+      setGraphReady(true);
     };
 
     fetchData();
@@ -74,8 +79,12 @@ const PriceGraph = () => {
 
   return (
     <div className="page-container">
-      {/* Search & scroll */}
-      <SearchItem onSelectItem={(id) => { setItemID(id); scrollToGraph(); }} />
+      <SearchItem
+        onSelectItem={(id) => {
+          setItemID(id);
+          scrollToGraph();
+        }}
+      />
 
       <div className="container" ref={priceGraphRef}>
         {itemName && <div className="itemName">{itemName}</div>}
@@ -125,6 +134,12 @@ const PriceGraph = () => {
           ))}
         </div>
       </div>
+
+      {itemID && graphReady && (
+        <div style={{ width: "80%", margin: "24px auto 0" }}>
+          <ProfitCalculator selectedItemId={itemID} />
+        </div>
+      )}
     </div>
   );
 };
