@@ -13,12 +13,11 @@ const Navbar = () => (
         <ul className="nav-links">
             {[
                 { name: "Home", path: "/" },
-                { name: "Trading", path: "/trading" },
-                { name: "Search", path: "/search" },
+                //{ name: "Trading", path: "/trading" },
+                { name: "Trade", path: "/trade" },
                 { name: "News", path: "/news" },
                 { name: "FAQ", path: "/faq" },
                 { name: "Login", path: "/login" },
-                { name: "Test", path: "/test" },
             ].map((item) => (
                 <li key={item.name}>
                     <Link to={item.path} className="nav-link">

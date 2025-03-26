@@ -1,0 +1,91 @@
+/* General Page Styles */
+.page-container {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #121212;
+  color: #e0e0e0;
+  border-radius: 10px;
+  padding: 1%;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.graphContainer {
+  height: 50%;
+}
+
+
+/* Text Styles */
+.itemName {
+  text-align: left;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+.currentPrice {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+.recentPrice,
+.priceChange {
+  text-align: left;
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.priceChange.dynamic {
+  color: var(--dynamic-color);
+}
+
+.priceChange.timeInterval {
+  color: #e0e0e0;
+}
+
+
+/* Input Field */
+.input {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 1%;
+  width: 98%;
+  margin-bottom: 10px;
+}
+
+
+/* Buttons */
+.buttonContainer {
+  text-align: left;
+  margin-top: 2%;
+}
+
+.button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: normal;
+  color: #e0e0e0;
+}
+
+.button.active {
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
