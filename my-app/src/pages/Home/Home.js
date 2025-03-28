@@ -30,7 +30,7 @@ function Home() {
                         </button>
                     </div>
                     <div className="right-content">
-                        placeholder
+                       Top 5 Gainer & decliner 
                     </div>
                 </div>
 

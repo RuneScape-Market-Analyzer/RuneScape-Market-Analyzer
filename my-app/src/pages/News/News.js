@@ -1,5 +1,6 @@
 import React from "react";
 import "./News.css";
+import "../../index.css";
 
 function News() {
     // Temporary mock news data
@@ -29,7 +30,7 @@ function News() {
 
     return (
         <div className="news-container">
-            <h1 className="news-header">RuneScape News & Updates</h1>
+            <h1 className="global-title">RuneScape News & Updates</h1>
             <div className="news-grid">
                 {newsItems.map(item => (
                     <div key={item.id} className="news-card">
