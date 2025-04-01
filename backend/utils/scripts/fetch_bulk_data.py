@@ -1,8 +1,6 @@
-from flask import g
-import json
 import sqlite3
 import requests
-import datetime
+from datetime import datetime
 
 BULK_ITEM_ENDPOINT = "https://chisel.weirdgloop.org/gazproj/gazbot/rs_dump.json"
 BULK_ITEM_PRICE_ENDPOINT = "https://api.weirdgloop.org/exchange/history/rs/all?id={}"
@@ -18,6 +16,7 @@ def update_items_table(DB_FILE_PATH):
         return []
 
     data = response.json()
+
     # Insert data into the table
     for item in data.values():
         try:
@@ -31,17 +30,17 @@ def update_items_table(DB_FILE_PATH):
                 item.get('last', None), item.get('volume', None)
             ))
 
-        # sometimes json file contains an update line that looks similar to the following at the end:
+        # results contains an update line at the end, looks like the following, will throw error:
         # "%UPDATE_DETECTED%": 1740386632.002803, "%JAGEX_TIMESTAMP%": 1740386172}
         except TypeError as e:
-            print(f"Error: {e}")
-            print(f"Problematic item: {item}")
+            print(f"\nError Message: {e}")
+            print(f"Error line: {item}\n")
 
     connection.commit()
 
 
 def timestamp_to_date(timestamp):
-    return datetime.datetime.fromtimestamp(int(timestamp) / 1000).strftime('%Y-%m-%d')
+    return datetime.utcfromtimestamp(timestamp / 1000).strftime('%Y-%m-%d')
 
 
 def get_item_price_all(item_id):

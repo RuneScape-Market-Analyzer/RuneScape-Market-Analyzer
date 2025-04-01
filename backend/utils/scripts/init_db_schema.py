@@ -120,8 +120,17 @@ def create_items_table(cursor):
             value INTEGER,
             price INTEGER,
             last INTEGER,
-            volume INTEGER
+            volume INTEGER,
+            percent_change REAL GENERATED ALWAYS AS (((price - last) * 1.0 / last) * 100) STORED
         );
+    ''')
+
+    # Indices to optimize queries
+    cursor.execute('''
+        CREATE INDEX IF NOT EXISTS idx_percent_change ON items(percent_change DESC);
+    ''')
+    cursor.execute('''
+        CREATE INDEX IF NOT EXISTS idx_volume ON items(volume DESC);
     ''')
 
 

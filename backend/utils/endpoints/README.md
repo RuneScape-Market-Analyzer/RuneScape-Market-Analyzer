@@ -13,6 +13,9 @@ This section of the API provides various endpoints to interact with data related
      - [Get Item Image Small](#get-item-image-small)
    - [Item Prices Endpoints](#item-prices-endpoints)
      - [Get Item Prices](#get-item-prices)
+     - [Get Item Top Gainers](#get-item-top-gainers)
+     - [Get Item Top Decliners](#get-item-top-decliners)
+     - [Get Item Greatest Volume](#get-item-greatest-volume)
    - [Item Search Endpoints](#item-search-endpoints)
      - [Search for Item](#search-for-item)
    - [Item Statistics Endpoints](#item-statistics-endpoints)
@@ -154,6 +157,97 @@ This section of the API provides various endpoints to interact with data related
   ]
 ]
 ```
+
+
+### Get Item Top Gainers
+- **Endpoint**: `/items/prices/top-gainers`
+- **Method**: `GET`
+- **Description**: Returns daily top 5 item price gainers by percent gained. Returns item_id, name, price, percent gained.
+
+#### Example Request
+`http://localhost:5000/items/prices/top-gainers`
+
+#### Example Responses
+```json
+[
+  [
+    52649,
+    "Frosty Cerberus boots token",
+    325968,
+    21.978034314367502
+  ],
+  [
+    53883,
+    "Witch's broom staff token",
+    133229,
+    15.440736857610759
+  ],
+  [
+    "...truncated in this example..."
+  ]
+]
+```
+
+
+### Get Item Top Decliners
+- **Endpoint**: `/items/prices/top-decliners`
+- **Method**: `GET`
+- **Description**: Returns daily top 5 item price decliners by percent declined. Returns item_id, name, price, percent declined.
+- 
+#### Example Request
+`http://localhost:5000/items/prices/top-decliners`
+
+#### Example Responses
+```json
+[
+  [
+    58581,
+    "'Dragonstone' title scroll",
+    103816170,
+    -21.220726163477046
+  ],
+  [
+    58580,
+    "Hydrix Circlet token",
+    628628016,
+    -20.6007522436522
+  ],
+  [
+    "...truncated in this example..."
+  ]
+]
+```
+
+
+### Get Item Greatest Volume
+- **Endpoint**: `/items/prices/greatest_volume`
+- **Method**: `GET`
+- **Description**: Returns daily top 5 items by volume. Returns item_id, name, price, volume.
+
+#### Example Request
+`http://localhost:5000/items/prices/greatest_volume`
+
+#### Example Responses
+```json
+[
+  [
+    12183,
+    "Spirit shards",
+    24,
+    91029511
+  ],
+  [
+    29324,
+    "Incandescent energy",
+    220,
+    39756187
+  ],
+  [
+    "...truncated in this example..."
+  ]
+]
+```
+
 
 <br>
 

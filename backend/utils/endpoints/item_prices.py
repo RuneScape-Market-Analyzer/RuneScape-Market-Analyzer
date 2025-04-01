@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 from datetime import datetime, timedelta
 from backend.utils.scripts.fetch_bulk_data import get_item_price_all
 
+from backend.utils.endpoints.helper_functions import query_db
 item_prices_bp = Blueprint('item_prices_bp', __name__)
 
 
@@ -36,3 +37,57 @@ def get_item_prices(item_id):
 
     filtered_prices = filter_prices(all_prices, start_date)
     return jsonify(filtered_prices)
+
+
+# returns top 5 gainers from previous day to today
+@item_prices_bp.route('/items/prices/top-gainers', methods=['GET'])
+def get_item_top_gainers():
+    query = '''
+        SELECT 
+            item_id, 
+            name, 
+            price, 
+            percent_change
+        FROM 
+            items
+        ORDER BY 
+            percent_change DESC
+        LIMIT 5;
+    '''
+    return query_db(query)
+
+
+# returns top 5 decliners from previous day to today
+@item_prices_bp.route('/items/prices/top-decliners', methods=['GET'])
+def get_item_top_decliners():
+    query = '''
+        SELECT 
+            item_id, 
+            name, 
+            price, 
+            percent_change
+        FROM 
+            items
+        ORDER BY 
+            percent_change ASC
+        LIMIT 5;
+    '''
+    return query_db(query)
+
+
+# returns top 5 items today by volume
+@item_prices_bp.route('/items/prices/greatest_volume', methods=['GET'])
+def get_item_greatest_volume():
+    query = '''
+        SELECT 
+            item_id, 
+            name, 
+            price, 
+            volume
+        FROM 
+            items
+        ORDER BY 
+            volume DESC
+        LIMIT 5;
+    '''
+    return query_db(query)
