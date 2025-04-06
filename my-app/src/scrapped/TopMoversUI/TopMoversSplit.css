@@ -1,0 +1,92 @@
+.top-movers {
+    background: #1c1c1e;
+    color: #f2f2f7;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+.top-movers h2 {
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 1.8rem;
+}
+
+.movers-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.mover-list {
+    flex: 1;
+    background-color: #2c2c2e;
+    border-radius: 10px;
+    padding: 12px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 280px;
+    overflow: hidden;
+}
+
+.mover-list h3 {
+    margin-top: 4px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #444;
+    height: 40px;
+    overflow: hidden;
+}
+
+.item-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.item-name {
+    flex: 1;
+    text-align: left;
+    margin-left: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+}
+
+.gainers-title {
+    color: #b0ff6f;
+}
+
+.decliners-title {
+    color: #ff8585;
+}
+
+.item-change.gain {
+    color: #4caf50;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+}
+
+.item-change.decline {
+    color: #f44336;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(244, 67, 54, 0.4);
+}
+
