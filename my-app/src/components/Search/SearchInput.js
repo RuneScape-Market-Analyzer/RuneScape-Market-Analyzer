@@ -3,6 +3,7 @@ import React from "react";
 const SearchInput = ({ query, setQuery, setSelectedItem, setIsFocused }) => {
   return (
     <input
+      data-testid="search-input"
       type="text"
       placeholder="Search Item..."
       value={query}

@@ -1,5 +1,835 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`matches generic snapshot 1`] = `
+<div>
+  <div
+    style="min-height: 100vh; color: white;"
+  >
+    <nav
+      class="navbar"
+    >
+      <div
+        class="logo"
+      >
+        <img
+          alt="Logo"
+          src="RuneScape.png"
+        />
+      </div>
+      <ul
+        class="nav-links"
+      >
+        <li>
+          <a
+            class="nav-link"
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link"
+            href="/trade"
+          >
+            Trade
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link"
+            href="/news"
+          >
+            News
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link"
+            href="/faq"
+          >
+            FAQ
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link"
+            href="/login"
+          >
+            Login
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      style="flex: 1;"
+    >
+      <div
+        style="text-align: center; margin-top: 50px;"
+      >
+        <div
+          class="trading-container"
+        >
+          <div
+            class="top-section"
+          >
+            <div
+              class="left-content"
+            >
+              <div
+                class="left-content-inner"
+              >
+                <h1>
+                  Stay Updated with Your Gaming Stats
+                </h1>
+                <p>
+                  Discover your RuneScape trading graph, and price analysis
+                </p>
+                <button
+                  class="navigate-button"
+                >
+                  Explore More
+                </button>
+              </div>
+            </div>
+            <div
+              class="right-content"
+            >
+              <div
+                class="top-movers new-layout"
+              >
+                <div
+                  class="top-header"
+                >
+                  <div
+                    class="header-text"
+                  >
+                    <h2
+                      style="opacity: 0; transform: translateY(6px) translateZ(0);"
+                    >
+                      Today's Market Trends
+                    </h2>
+                    <p
+                      class="subheader"
+                      style="opacity: 0; transform: translateY(4px) translateZ(0);"
+                    >
+                      Showing most traded items by volume
+                    </p>
+                  </div>
+                  <div
+                    class="toggle-buttons"
+                  >
+                    <button
+                      class="active volume-active"
+                    >
+                      Volume
+                    </button>
+                    <button
+                      class=""
+                    >
+                      Gainers
+                    </button>
+                    <button
+                      class=""
+                    >
+                      Decliners
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="mover-list full"
+                >
+                  <div
+                    class="table-header"
+                  >
+                    <div
+                      class="header-icon"
+                    />
+                    <div
+                      class="header-name"
+                    >
+                      Item
+                    </div>
+                    <div
+                      class="header-price"
+                    >
+                      Price
+                    </div>
+                    <div
+                      class="header-change"
+                    >
+                      Volume
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1>
+            Most Traded Item Of Today
+          </h1>
+          <div
+            class="most-traded-item"
+          >
+            Most Traded Item
+          </div>
+        </div>
+        <div
+          class="news-container"
+        >
+          <div
+            class="news-container"
+          >
+            <div
+              class="news-title"
+            >
+              <h1
+                class="global-title"
+              >
+                RuneScape News & Updates
+              </h1>
+            </div>
+            <div
+              class="featured-news"
+            >
+              <div
+                class="featured-text"
+              >
+                <span
+                  class="news-tag"
+                >
+                  Featured Update
+                </span>
+                <h2
+                  class="news-heading"
+                >
+                  Return to the Desert: Pharaoh's Folly
+                </h2>
+                <p
+                  class="news-date"
+                >
+                  April 5, 2024
+                </p>
+                <p
+                  class="news-summary"
+                >
+                  Continuing the story from Beneath Scabaras’ Sands, you’ll journey back to Menaphos, team up with Ozan and Leela to uncover Pharaoh Osman’s betrayal.
+                </p>
+              </div>
+              <div
+                class="featured-image-wrapper"
+              >
+                <img
+                  alt="Return to the Desert: Pharaoh's Folly"
+                  class="featured-image"
+                  src="https://cdn.runescape.com/assets/img/external/news/2025/04/pfkey.jpg"
+                />
+              </div>
+            </div>
+            <div
+              class="news-section-header"
+            >
+              <h2
+                class="news-section-title"
+              >
+                Latest News
+              </h2>
+              <button
+                class="news-read-more-link"
+              >
+                Read More 
+                <span
+                  class="arrow"
+                >
+                  →
+                </span>
+              </button>
+            </div>
+            <div
+              class="news-grid"
+            >
+              <article
+                class="news-card"
+              >
+                <img
+                  alt="New Elder God Wars Dungeon Update"
+                  class="news-image"
+                  src="https://runescape.wiki/images/thumb/The_Croesus_Front_Survival_Guide_(1)_update_image.jpg/1160px-The_Croesus_Front_Survival_Guide_(1)_update_image.jpg"
+                />
+                <div
+                  class="news-body"
+                >
+                  <span
+                    class="news-tag"
+                  >
+                    Game Update
+                  </span>
+                  <h2
+                    class="news-heading"
+                  >
+                    New Elder God Wars Dungeon Update
+                  </h2>
+                  <p
+                    class="news-date"
+                  >
+                    March 14, 2024
+                  </p>
+                  <p
+                    class="news-summary"
+                  >
+                    The final front of the Elder God Wars Dungeon arrives with challenging new bosses and powerful rewards...
+                  </p>
+                </div>
+              </article>
+              <article
+                class="news-card"
+              >
+                <img
+                  alt="Double XP Weekend Announced"
+                  class="news-image"
+                  src="https://external-preview.redd.it/Q6md3IHfYgDkCs32DHnAVj5-Fj_XGxv_JIFlTSjSSvQ.jpg?auto=webp&s=515a653678ce9bab4a4b510b5cb85d1516c1ab27"
+                />
+                <div
+                  class="news-body"
+                >
+                  <span
+                    class="news-tag"
+                  >
+                    Event
+                  </span>
+                  <h2
+                    class="news-heading"
+                  >
+                    Double XP Weekend Announced
+                  </h2>
+                  <p
+                    class="news-date"
+                  >
+                    March 11, 2024
+                  </p>
+                  <p
+                    class="news-summary"
+                  >
+                    Prepare your training plans! The next Double XP Weekend will run from March 24th to 28th...
+                  </p>
+                </div>
+              </article>
+              <article
+                class="news-card"
+              >
+                <img
+                  alt="Wilderness Rework Proposal"
+                  class="news-image"
+                  src="https://runescape.wiki/images/thumb/Wilderness_rework_with_opt-in_PvP_out_now!_-_The_Wilderness_Reborn_(RuneScape).jpg/640px-Wilderness_rework_with_opt-in_PvP_out_now!_-_The_Wilderness_Reborn_(RuneScape).jpg"
+                />
+                <div
+                  class="news-body"
+                >
+                  <span
+                    class="news-tag"
+                  >
+                    Developer Blog
+                  </span>
+                  <h2
+                    class="news-heading"
+                  >
+                    Wilderness Rework Proposal
+                  </h2>
+                  <p
+                    class="news-date"
+                  >
+                    March 9, 2024
+                  </p>
+                  <p
+                    class="news-summary"
+                  >
+                    Jagex releases proposed changes to Wilderness PvP mechanics. Player feedback needed...
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button
+            class="navigate-button"
+          >
+            View All
+          </button>
+        </div>
+        <div
+          class="faq-container"
+        >
+          <h1>
+            Have Questions?
+          </h1>
+          <p>
+            Check out our FAQ section!
+          </p>
+          <button
+            class="navigate-button"
+          >
+            View All
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="site-footer"
+    >
+      <div
+        class="footer-content"
+      >
+        <p
+          class="footer-text"
+        >
+          © 
+          2025
+           RuneScape Fan Site. All rights reserved.
+        </p>
+        <div
+          class="footer-links"
+        >
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            href="/trade"
+          >
+            Trade
+          </a>
+          <a
+            href="/news"
+          >
+            News
+          </a>
+          <a
+            href="/faq"
+          >
+            FAQ
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot 1`] = `
+<div>
+  <div
+    style="min-height: 100vh; color: white;"
+  >
+    <nav
+      class="navbar"
+    >
+      <div
+        class="logo"
+      >
+        <img
+          alt="Logo"
+          src="RuneScape.png"
+        />
+      </div>
+      <ul
+        class="nav-links"
+      >
+        <li>
+          <a
+            class="nav-link"
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link"
+            href="/trade"
+          >
+            Trade
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link"
+            href="/news"
+          >
+            News
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link"
+            href="/faq"
+          >
+            FAQ
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link"
+            href="/login"
+          >
+            Login
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      style="flex: 1;"
+    >
+      <div
+        style="text-align: center; margin-top: 50px;"
+      >
+        <div
+          class="trading-container"
+        >
+          <div
+            class="top-section"
+          >
+            <div
+              class="left-content"
+            >
+              <div
+                class="left-content-inner"
+              >
+                <h1>
+                  Stay Updated with Your Gaming Stats
+                </h1>
+                <p>
+                  Discover your RuneScape trading graph, and price analysis
+                </p>
+                <button
+                  class="navigate-button"
+                >
+                  Explore More
+                </button>
+              </div>
+            </div>
+            <div
+              class="right-content"
+            >
+              <div
+                class="top-movers new-layout"
+              >
+                <div
+                  class="top-header"
+                >
+                  <div
+                    class="header-text"
+                  >
+                    <h2
+                      style="opacity: 0; transform: translateY(6px) translateZ(0);"
+                    >
+                      Today's Market Trends
+                    </h2>
+                    <p
+                      class="subheader"
+                      style="opacity: 0; transform: translateY(4px) translateZ(0);"
+                    >
+                      Showing most traded items by volume
+                    </p>
+                  </div>
+                  <div
+                    class="toggle-buttons"
+                  >
+                    <button
+                      class="active volume-active"
+                    >
+                      Volume
+                    </button>
+                    <button
+                      class=""
+                    >
+                      Gainers
+                    </button>
+                    <button
+                      class=""
+                    >
+                      Decliners
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="mover-list full"
+                >
+                  <div
+                    class="table-header"
+                  >
+                    <div
+                      class="header-icon"
+                    />
+                    <div
+                      class="header-name"
+                    >
+                      Item
+                    </div>
+                    <div
+                      class="header-price"
+                    >
+                      Price
+                    </div>
+                    <div
+                      class="header-change"
+                    >
+                      Volume
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1>
+            Most Traded Item Of Today
+          </h1>
+          <div
+            class="most-traded-item"
+          >
+            Most Traded Item
+          </div>
+        </div>
+        <div
+          class="news-container"
+        >
+          <div
+            class="news-container"
+          >
+            <div
+              class="news-title"
+            >
+              <h1
+                class="global-title"
+              >
+                RuneScape News & Updates
+              </h1>
+            </div>
+            <div
+              class="featured-news"
+            >
+              <div
+                class="featured-text"
+              >
+                <span
+                  class="news-tag"
+                >
+                  Featured Update
+                </span>
+                <h2
+                  class="news-heading"
+                >
+                  Return to the Desert: Pharaoh's Folly
+                </h2>
+                <p
+                  class="news-date"
+                >
+                  April 5, 2024
+                </p>
+                <p
+                  class="news-summary"
+                >
+                  Continuing the story from Beneath Scabaras’ Sands, you’ll journey back to Menaphos, team up with Ozan and Leela to uncover Pharaoh Osman’s betrayal.
+                </p>
+              </div>
+              <div
+                class="featured-image-wrapper"
+              >
+                <img
+                  alt="Return to the Desert: Pharaoh's Folly"
+                  class="featured-image"
+                  src="https://cdn.runescape.com/assets/img/external/news/2025/04/pfkey.jpg"
+                />
+              </div>
+            </div>
+            <div
+              class="news-section-header"
+            >
+              <h2
+                class="news-section-title"
+              >
+                Latest News
+              </h2>
+              <button
+                class="news-read-more-link"
+              >
+                Read More 
+                <span
+                  class="arrow"
+                >
+                  →
+                </span>
+              </button>
+            </div>
+            <div
+              class="news-grid"
+            >
+              <article
+                class="news-card"
+              >
+                <img
+                  alt="New Elder God Wars Dungeon Update"
+                  class="news-image"
+                  src="https://runescape.wiki/images/thumb/The_Croesus_Front_Survival_Guide_(1)_update_image.jpg/1160px-The_Croesus_Front_Survival_Guide_(1)_update_image.jpg"
+                />
+                <div
+                  class="news-body"
+                >
+                  <span
+                    class="news-tag"
+                  >
+                    Game Update
+                  </span>
+                  <h2
+                    class="news-heading"
+                  >
+                    New Elder God Wars Dungeon Update
+                  </h2>
+                  <p
+                    class="news-date"
+                  >
+                    March 14, 2024
+                  </p>
+                  <p
+                    class="news-summary"
+                  >
+                    The final front of the Elder God Wars Dungeon arrives with challenging new bosses and powerful rewards...
+                  </p>
+                </div>
+              </article>
+              <article
+                class="news-card"
+              >
+                <img
+                  alt="Double XP Weekend Announced"
+                  class="news-image"
+                  src="https://external-preview.redd.it/Q6md3IHfYgDkCs32DHnAVj5-Fj_XGxv_JIFlTSjSSvQ.jpg?auto=webp&s=515a653678ce9bab4a4b510b5cb85d1516c1ab27"
+                />
+                <div
+                  class="news-body"
+                >
+                  <span
+                    class="news-tag"
+                  >
+                    Event
+                  </span>
+                  <h2
+                    class="news-heading"
+                  >
+                    Double XP Weekend Announced
+                  </h2>
+                  <p
+                    class="news-date"
+                  >
+                    March 11, 2024
+                  </p>
+                  <p
+                    class="news-summary"
+                  >
+                    Prepare your training plans! The next Double XP Weekend will run from March 24th to 28th...
+                  </p>
+                </div>
+              </article>
+              <article
+                class="news-card"
+              >
+                <img
+                  alt="Wilderness Rework Proposal"
+                  class="news-image"
+                  src="https://runescape.wiki/images/thumb/Wilderness_rework_with_opt-in_PvP_out_now!_-_The_Wilderness_Reborn_(RuneScape).jpg/640px-Wilderness_rework_with_opt-in_PvP_out_now!_-_The_Wilderness_Reborn_(RuneScape).jpg"
+                />
+                <div
+                  class="news-body"
+                >
+                  <span
+                    class="news-tag"
+                  >
+                    Developer Blog
+                  </span>
+                  <h2
+                    class="news-heading"
+                  >
+                    Wilderness Rework Proposal
+                  </h2>
+                  <p
+                    class="news-date"
+                  >
+                    March 9, 2024
+                  </p>
+                  <p
+                    class="news-summary"
+                  >
+                    Jagex releases proposed changes to Wilderness PvP mechanics. Player feedback needed...
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button
+            class="navigate-button"
+          >
+            View All
+          </button>
+        </div>
+        <div
+          class="faq-container"
+        >
+          <h1>
+            Have Questions?
+          </h1>
+          <p>
+            Check out our FAQ section!
+          </p>
+          <button
+            class="navigate-button"
+          >
+            View All
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="site-footer"
+    >
+      <div
+        class="footer-content"
+      >
+        <p
+          class="footer-text"
+        >
+          © 
+          2025
+           RuneScape Fan Site. All rights reserved.
+        </p>
+        <div
+          class="footer-links"
+        >
+          <a
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            href="/trade"
+          >
+            Trade
+          </a>
+          <a
+            href="/news"
+          >
+            News
+          </a>
+          <a
+            href="/faq"
+          >
+            FAQ
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;
+
 exports[`renders homepage 1`] = `
 <div>
   <div
