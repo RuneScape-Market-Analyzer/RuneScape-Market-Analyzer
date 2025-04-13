@@ -1,0 +1,17 @@
+README.md
+setup.py
+backend/__init__.py
+backend/tests/__init__.py
+backend/tests/test_api.py
+backend/utils/__init__.py
+backend/utils/init_db.py
+backend/utils/init_flask.py
+backend/utils/scripts/__init__.py
+backend/utils/scripts/fetch_bulk_data.py
+backend/utils/scripts/init_db_schema.py
+backend/utils/scripts/update_item_details.py
+runescape_tool.egg-info/PKG-INFO
+runescape_tool.egg-info/SOURCES.txt
+runescape_tool.egg-info/dependency_links.txt
+runescape_tool.egg-info/requires.txt
+runescape_tool.egg-info/top_level.txt
