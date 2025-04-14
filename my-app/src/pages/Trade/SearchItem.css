@@ -43,6 +43,12 @@
   list-style: none;
 }
 
+.no-results {
+  margin-top: 16px;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
 /* Individual search result item */
 .search-result-item {
   display: flex;

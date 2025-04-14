@@ -15,7 +15,9 @@
 }
 
 .graphContainer {
-  height: 50%;
+  height: 200px;
+  position: relative;
+  transition: opacity 0.3s ease;
 }
 
 
@@ -88,4 +90,55 @@
 
 .button:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Fade-in animation for chart & info*/
+.chart-fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.chart-fade.visible {
+  opacity: 1;
+}
+
+.fade-info {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-info.visible {
+  opacity: 1;
+}
+
+/* Loading Animation */
+.loading-bounce {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ffa07a;
+  margin: 16px auto;
+}
+
+.dots {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.dots span {
+  display: inline-block;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.dots span:nth-child(1) { animation-delay: 0s; }
+.dots span:nth-child(2) { animation-delay: 0.2s; }
+.dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
 }

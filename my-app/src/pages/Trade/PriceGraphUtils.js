@@ -55,23 +55,33 @@ export const fetchPriceData = async (
   }
 };
 
-export const fetchItemDetails = async (itemID, setItemName) => {
+export const fetchItemDetails = async (itemID) => {
   try {
     const response = await fetch(`http://127.0.0.1:5000/items/name/${itemID}`);
     const data = await response.json();
-    setItemName(data?.[0]?.[0] || "");
+    return data?.[0]?.[0] || "";
   } catch (error) {
     console.error("Error fetching item name:", error);
+    return "";
   }
 };
-
 export const clearChartElements = (chart) => {
   chart.setActiveElements([]);
 };
 
-export const getButtonStyle = (isActive, graphColor) => ({
-  color: isActive ? graphColor : "#e0e0e0",
+export const getButtonStyle = (isActive, graphColor, isLoading) => ({
+  color: isActive
+    ? isLoading
+      ? "#ffffff"
+      : graphColor
+    : "#e0e0e0",
   fontWeight: isActive ? "bold" : "normal",
+  backgroundColor: isActive
+    ? isLoading
+      ? "transparent"
+      : `${graphColor}22`
+    : "transparent",
+  transition: "color 0.3s ease, background-color 0.3s ease"
 });
 
 export const getChartOptions = (graphColor, clearChartElements, setHoveredPrice) => ({
