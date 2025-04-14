@@ -8,7 +8,7 @@ function Home() {
     const navigate = useNavigate();
 
     const handleTrading = () => {
-        navigate('/trading');
+        navigate('/trade');
     };
     const handleNews = () => {
         navigate('/news');
