@@ -16,6 +16,7 @@ This section of the API provides various endpoints to interact with data related
      - [Get Item Top Gainers](#get-item-top-gainers)
      - [Get Item Top Decliners](#get-item-top-decliners)
      - [Get Item Greatest Volume](#get-item-greatest-volume)
+     - [Get Item Price Prediction](#get-item-price-prediction)
    - [Item Search Endpoints](#item-search-endpoints)
      - [Search for Item](#search-for-item)
    - [Item Statistics Endpoints](#item-statistics-endpoints)
@@ -248,6 +249,32 @@ This section of the API provides various endpoints to interact with data related
 ]
 ```
 
+### Get Item Price Prediction
+- **Endpoint**: `/items/prices/predict/<int:item_id>`
+- **Method**: `GET`
+- **Description**: Predicts the next price for a given item using machine learning models. The prediction is made using the appropriate cluster-specific model for the item.
+
+#### Process
+1. Identifies the item's cluster from the item cluster map
+2. Uses the corresponding machine learning model for that cluster
+3. Takes the 10 most recent prices as input
+4. Uses the 50 most recent prices to calculate mean and standard deviation
+5. Returns both the predicted price and related statistics
+
+#### Example Request
+`http://localhost:5000/items/prices/predict/2357`
+
+#### Example Response
+```json
+{
+    "item_id": 2357,
+    "cluster": 3,
+    "current_price": 2088.0,
+    "predicted_price": 2095.5,
+    "predicted_change": 7.5,
+    "predicted_change_percent": 0.359375
+}
+```
 
 <br>
 
