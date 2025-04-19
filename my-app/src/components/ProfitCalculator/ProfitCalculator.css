@@ -1,91 +1,161 @@
 .profit-calculator {
+  /* Overall container for the calculator component */
   padding: 24px;
   border: 1px solid #444;
   border-radius: 12px;
   background-color: #1c1c1c;
   color: white;
-  width: 80%;
-  margin: 10px auto 0;
+  width: 90%;
+  margin: 10px auto;
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.profit-calculator h3 {
+.dashboard-header {
+  /* Styling for the header */
   margin-bottom: 20px;
-  font-size: 1.5rem;
-  color: #00e676;
+  font-size: 1.8rem;
+  color: #4287f5; /* Soft blue for header text */
 }
 
-.profit-calculator label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
-  color: #ccc;
+.current-price {
+  /* Styling for the current market price text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFD700; /* Gold color to make it stand out */
+  margin: 20px 0; /* Added spacing */
 }
 
-.profit-calculator input {
-  width: 95%;
-  padding: 10px;
-  margin-bottom: 16px;
-  border-radius: 6px;
-  border: 1px solid #666;
-  background-color: #2a2a2a;
-  color: white;
+.quantity-selector h4 {
+  /* Styling for the quantity selection header */
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.quantity-button {
+  /* Styling for the quantity buttons */
+  margin: 5px;
+  padding: 8px 14px;
   font-size: 14px;
-}
-
-.profit-calculator button {
-  padding: 10px 18px;
-  background-color: #00e676;
-  color: black;
-  border: none;
+  background-color: #444;
+  border: 1px solid #666;
+  color: white;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.quantity-button:hover {
+  /* Hover effect for quantity buttons */
+  background-color: #00e676;
+  color: black;
+}
+
+.quantity-selected {
+  /* Styling for the selected quantity button */
+  background-color: #00e676;
+  color: black;
   font-weight: bold;
-  transition: background-color 0.2s ease;
+  border: 2px solid #00c765;
 }
 
-.profit-calculator button:hover {
-  background-color: #00c765;
+.profit-columns {
+  /* Layout for the two calculator sections */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.results {
-  margin-top: 20px;
-  font-size: 16px;
-  line-height: 1.5;
+.profit-column {
+  /* Styling for each section (ML Predicted and Custom Profit) */
+  flex: 1;
+  padding: 16px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background-color: #2a2a2a;
+  color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
-.results p {
-  margin: 4px 0;
+.section-header {
+  /* Section title styling */
+  font-size: 1.4rem;
+  color: #4287f5;
+  margin-bottom: 12px;
+}
+
+.prediction-table {
+  /* Styling for the prediction data table */
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prediction-table td {
+  /* Table cell styling */
+  padding: 6px 10px;
+  font-size: 1rem;
+}
+
+.prediction-table td:first-child {
+  /* Left-align and color for descriptive column */
+  text-align: left;
+  color: white;
+}
+
+.prediction-table td:last-child {
+  /* Left-align for numeric column */
+  text-align: left;
+}
+
+.sell-price-label {
+  /* Styling for custom sell price label */
+  margin-bottom: 8px;
+}
+
+.sell-price-label p:first-child {
+  /* Label text for custom sell price */
+  font-size: 1rem;
+  color: white;
+}
+
+.sell-price-label p:last-child {
+  /* Styling for the custom sell price value */
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.custom-sell-slider {
+  /* Slider styling */
+  width: 90%;
+  margin: 12px 0;
+}
+
+.custom-profit-section {
+  /* Layout for profit data on the custom profit side */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 8px;
+  margin-top: 20px; /* Added spacing */
+}
+
+.custom-profit-section p {
+  /* Profit text alignment */
+  margin: 0;
 }
 
 .profit-positive {
+  /* Styling for positive profit values */
   color: #00e676;
 }
 
 .profit-negative {
+  /* Styling for negative profit values */
   color: #f72585;
 }
 
 .profit-neutral {
+  /* Styling for neutral (break-even) profit values */
   color: white;
-}
-
-.loss-warning {
-  color: #ff4d4d;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.profit-calculator {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.4s ease-out forwards;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
