@@ -55,6 +55,8 @@ def get_item_price_all(item_id):
     for item_id, records in data.items():
         for record in records:
             date = timestamp_to_date(record['timestamp'])
-            return_data.append([int(item_id), date, float(record['price'])])
+            price = float(record['price'])
+            volume = record.get('volume', None)
+            return_data.append([int(item_id), date, price, volume])
 
     return return_data

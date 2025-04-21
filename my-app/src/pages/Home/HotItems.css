@@ -1,0 +1,281 @@
+.hot-items-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: #1A1A2E;
+    color: white;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(156, 92, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 1rem;
+  }  
+  
+  .hot-items-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .hot-items-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1120px;
+    height: 2px;
+    background-color: #9c5cff;
+    border-radius: 2px;
+  }
+  
+  .hot-items-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+  }  
+
+  .hot-desc {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  
+  .hot-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    padding: 28px 20px 28px 10px;
+    border-radius: 14px;
+    background: #2d2b31;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: relative;
+  }
+  
+  .hot-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: calc(100% - 50px);
+    margin: 0;
+  }  
+  
+  .hot-chart {
+    flex-grow: 1;
+    flex-basis: 700px;
+    height: 260px;
+    min-width: 700px;
+    max-width: 800px;
+    position: relative;
+  }
+  
+  .hot-item-info {
+    flex: 1;
+    text-align: center;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .hot-item-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  .hot-stat {
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+  
+  .hot-stat span {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .hot-badge {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .hot-badge.gain {
+    background-color: rgba(0, 200, 120, 0.15);
+    color: #00c878;
+    border: 1px solid #00c878;
+  }
+  
+  .hot-badge.decline {
+    background-color: rgba(255, 80, 80, 0.15);
+    color: #ff5050;
+    border: 1px solid #ff5050;
+  }
+  
+  .hot-badge.neutral {
+    background-color: rgba(180, 180, 180, 0.12);
+    color: #aaa;
+    border: 1px solid #888;
+  }
+  
+  .hot-item-icon {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    image-rendering: pixelated;
+  }
+  
+  .hot-rank {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ccc;
+    opacity: 0.9;
+    z-index: 5;
+  }
+  
+  .hot-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.071);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .hot-card:hover .hot-nav {
+    opacity: 1;
+  }
+  
+  .hot-nav.left {
+    left: 10px;
+  }
+  
+  .hot-nav.right {
+    right: 10px;
+  }
+  
+  .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  
+  .triangle-left {
+    border-width: 12px 16px 12px 0;
+    border-color: transparent #9c5cff transparent transparent;
+  }
+  
+  .triangle-right {
+    border-width: 12px 0 12px 16px;
+    border-color: transparent transparent transparent #9c5cff;
+  }
+  
+  .hot-dots {
+    margin-top: 16px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 0 6px;
+    background-color: #555;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #9c5cff;
+  }
+  
+  .hot-loading-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 20px;
+    height: 320px;
+    width: 100%;
+    border-radius: 14px;
+    background: #2d2b31;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .hot-loading-card .loading-bounce {
+    color: white;
+  }
+
+  .loading-bounce {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    margin: 16px auto;
+  }  
+  
+  .loading-bounce .dots {
+    display: inline-block;
+    margin-left: 6px;
+    color: white;
+  }
+  
+  .loading-bounce .dots span {
+    display: inline-block;
+    animation: bounce 1s infinite ease-in-out;
+  }
+  
+  .loading-bounce .dots span:nth-child(1) { animation-delay: 0s; }
+  .loading-bounce .dots span:nth-child(2) { animation-delay: 0.2s; }
+  .loading-bounce .dots span:nth-child(3) { animation-delay: 0.4s; }
+  
+  @keyframes bounce {
+    0%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-6px);
+    }
+  }
+
+  .hot-fade-in {
+    opacity: 0;
+    animation: fadeInHot 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInHot {
+    to {
+      opacity: 1;
+    }
+  }  
+  

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import News from "../News/News.js";
 import './Home.css';
 import TopMovers from "./TopMovers";
+import HotItems from "./HotItems";
 
 function Home() {
     const navigate = useNavigate();
@@ -36,11 +37,10 @@ function Home() {
                         <TopMovers />
                     </div>
                 </div>
-
-                <h1>Most Traded Item Of Today</h1>
-                <div className="most-traded-item">
-                    Most Traded Item
+                <div className="hot-items-header">
+                <h1>Hot Items Today</h1>
                 </div>
+                <HotItems />
             </div>
 
             <div className="news-container">
@@ -51,11 +51,11 @@ function Home() {
             </div>
 
             <div className="faq-container">
-            <h1>Have Questions?</h1>
-            <p>
-            Check out our FAQ section!
-            </p>
-            <button className="navigate-button" onClick={handleFAQ}>
+                <h1>Have Questions?</h1>
+                <p>
+                    Check out our FAQ section!
+                </p>
+                <button className="navigate-button" onClick={handleFAQ}>
                     View All
                 </button>
             </div>
