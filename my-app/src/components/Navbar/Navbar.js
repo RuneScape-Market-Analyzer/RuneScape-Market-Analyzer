@@ -17,7 +17,7 @@ const Navbar = () => (
                 { name: "Trade", path: "/trade" },
                 { name: "News", path: "/news" },
                 { name: "FAQ", path: "/faq" },
-                { name: "Login", path: "/login" },
+                //{ name: "Login", path: "/login" },
             ].map((item) => (
                 <li key={item.name}>
                     <Link to={item.path} className="nav-link">
